@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Chat Exporter</h1>
+            <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+        </div>
+        
+        <div class="form-group">
+            <label for="filename">File Name:</label>
+            <input type="text" id="filename" placeholder="conversation-2024-01-01">
+        </div>
+        
+        <div class="form-group">
+            <label for="path">Repository Path:</label>
+            <input type="text" id="path" placeholder="conversations">
+        </div>
+        
+        <div class="form-group">
+            <label>Export Formats:</label>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="markdown" checked>
+                    <span class="checkmark"></span>
+                    Markdown (.md)
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="html" checked>
+                    <span class="checkmark"></span>
+                    HTML (.html)
+                </label>
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <button id="extractBtn" class="btn btn-primary">Extract Conversation</button>
+            <button id="exportBtn" class="btn btn-success" disabled>Export to GitHub</button>
+        </div>
+        
+        <div id="status"></div>
+        
+        <div class="preview-section">
+            <h3>Preview:</h3>
+            <div id="preview" class="preview-content"></div>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

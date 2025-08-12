@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AI Chat Exporter Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Chat Exporter Settings</h1>
+            <p>Configure your GitHub integration and export preferences</p>
+        </div>
+        
+        <div class="section">
+            <h2>GitHub Configuration</h2>
+            
+            <div class="form-group">
+                <label for="token">Personal Access Token:</label>
+                <input type="password" id="token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+                <div class="help-text">
+                    <a href="https://github.com/settings/tokens" target="_blank">Generate a new token</a> with 'repo' permissions
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="owner">Username/Organization:</label>
+                <input type="text" id="owner" placeholder="your-username">
+            </div>
+            
+            <div class="form-group">
+                <label for="repo">Repository Name:</label>
+                <input type="text" id="repo" placeholder="my-conversations">
+            </div>
+            
+            <div class="form-group">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" placeholder="main" value="main">
+            </div>
+            
+            <button id="testConnection" class="btn btn-secondary">Test Connection</button>
+        </div>
+        
+        <div class="section">
+            <h2>Export Settings</h2>
+            
+            <div class="form-group">
+                <label for="defaultPath">Default Repository Path:</label>
+                <input type="text" id="defaultPath" placeholder="conversations" value="conversations">
+                <div class="help-text">Folder path within your repository where files will be saved</div>
+            </div>
+            
+            <div class="form-group">
+                <label>Default Export Formats:</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="defaultMarkdown" checked>
+                        <span class="checkmark"></span>
+                        Markdown (.md)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="defaultHtml" checked>
+                        <span class="checkmark"></span>
+                        HTML (.html)
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="fileNaming">File Naming Pattern:</label>
+                <select id="fileNaming">
+                    <option value="timestamp">Include timestamp (conversation-2024-01-01-120000)</option>
+                    <option value="simple">Simple naming (conversation)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Auto-Export Settings</h2>
+            
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="autoExport">
+                    <span class="checkmark"></span>
+                    Enable auto-export (experimental)
+                </label>
+                <div class="help-text">Automatically export conversations when detected (may affect performance)</div>
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <button id="saveSettings" class="btn btn-primary">Save Settings</button>
+        </div>
+        
+        <div id="status"></div>
+        
+        <div class="footer">
+            <p>AI Chat Exporter v1.0.0 - <a href="https://github.com/alonegg/ai-chat-exporter" target="_blank">GitHub</a></p>
+        </div>
+    </div>
+    
+    <script src="options.js"></script>
+</body>
+</html>
